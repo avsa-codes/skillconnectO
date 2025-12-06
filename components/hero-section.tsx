@@ -35,37 +35,37 @@ export function HeroSection() {
           <div className="bg-[#FFF8F3] rounded-2xl p-5 sm:p-6 md:p-8">
             {/* Pre-screened matches badge */}
             <span className="inline-block bg-[#FF7A00] text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Pre-screened matches
+              Pre-screened talent pool
             </span>
 
             {/* Live student task board */}
             <div className="mb-4">
-              <h3 className="text-[#1A1A1A] font-bold text-lg">Live student task board</h3>
-              <p className="text-gray-600">Marketing, Ops, Events</p>
+              <h3 className="text-[#1A1A1A] font-bold text-lg">Live student task board (Launching Shortly)</h3>
+              <p className="text-gray-600">Marketing, Ops, Events, Content, Tech</p>
             </div>
 
             {/* Matches info */}
             <div className="bg-white rounded-xl p-4 mb-4">
-              <h4 className="text-[#1A1A1A] font-bold text-xl">12 matches in under 6 hours</h4>
+              <h4 className="text-[#1A1A1A] font-bold text-xl">What companies will get ?</h4>
               <p className="text-gray-600">Qualified students ready to start</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="bg-white rounded-xl p-4">
-                <p className="text-gray-500 text-sm mb-1">Compliance ready</p>
+                <p className="text-gray-500 text-sm mb-1">Fully managed onboarding</p>
                 <h4 className="text-[#1A1A1A] font-bold">Documentation & payroll</h4>
                 <p className="text-gray-600 text-sm">100% managed for you</p>
               </div>
               <div className="bg-white rounded-xl p-4">
                 <p className="text-gray-500 text-sm mb-1">Replacement guarantee</p>
                 <h4 className="text-[#1A1A1A] font-bold">48-hour backup</h4>
-                <p className="text-gray-600 text-sm">Student satisfaction</p>
-                <p className="text-[#1A1A1A] font-bold">⭐4.2 / 5 avg.</p>
+                <p className="text-gray-600 text-sm">Vetted students only</p>
+                <p className="text-[#1A1A1A] font-bold"></p>
               </div>
             </div>
 
             {/* Footer text */}
-            <p className="text-gray-500 text-sm">Onboarding handled by InstaTask</p>
+            <p className="text-gray-500 text-sm">SkillConnect is currently in pre-launch. These features will be available at launch.</p>
           </div>
         </div>
       </div>
