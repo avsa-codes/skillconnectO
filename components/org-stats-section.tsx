@@ -26,7 +26,7 @@ export function OrgStatsSection() {
 
           <p className="text-5xl font-extrabold text-orange-600">100+</p>
           <p className="mt-3 text-xl md:text-2xl font-semibold text-gray-800">
-            Organizations onboarded & ready to hire
+            Organizations applied for early access 
           </p>
 
           <p className="mt-2 text-gray-600">

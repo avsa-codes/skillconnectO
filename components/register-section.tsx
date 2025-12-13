@@ -5,23 +5,34 @@ import { Check } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
 export function RegisterSection() {
-  const [formData, setFormData] = useState({
-    companyName: "",
-    contactPerson: "",
-    workEmail: "",
-    phoneNumber: "",
-    domains: {
-      marketing: false,
-      design: false,
-      operations: false,
-      dataEntry: false,
-      events: false,
-      others: false,
-    },
-  })
+const [formData, setFormData] = useState({
+  companyName: "",
+  contactPerson: "",
+  workEmail: "",
+  phoneNumber: "",
+  companySize: "",
+  domains: {
+    marketing: false,
+    design: false,
+    operations: false,
+    dataEntry: false,
+    events: false,
+    others: false,
+  },
+})
+
 
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+
+  const COMPANY_SIZES = [
+  "1-10",
+  "11-50",
+  "51-200",
+  "201-500",
+  "500+",
+]
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -48,13 +59,15 @@ export function RegisterSection() {
       .map(([key]) => key)
 
     // Validation
-    if (
-      !formData.companyName ||
-      !formData.contactPerson ||
-      !formData.workEmail ||
-      !formData.phoneNumber ||
-      selectedDomains.length === 0
-    ) {
+   if (
+  !formData.companyName ||
+  !formData.contactPerson ||
+  !formData.workEmail ||
+  !formData.phoneNumber ||
+  !formData.companySize ||
+  selectedDomains.length === 0
+)
+{
       alert("Please fill all fields and select at least one domain.")
       setLoading(false)
       return
@@ -77,19 +90,21 @@ export function RegisterSection() {
 
       setSubmitted(true)
       setFormData({
-        companyName: "",
-        contactPerson: "",
-        workEmail: "",
-        phoneNumber: "",
-        domains: {
-          marketing: false,
-          design: false,
-          operations: false,
-          dataEntry: false,
-          events: false,
-          others: false,
-        },
-      })
+  companyName: "",
+  contactPerson: "",
+  workEmail: "",
+  phoneNumber: "",
+  companySize: "",
+  domains: {
+    marketing: false,
+    design: false,
+    operations: false,
+    dataEntry: false,
+    events: false,
+    others: false,
+  },
+})
+
 
       // Reset submitted after 3 seconds
       setTimeout(() => setSubmitted(false), 3000)
@@ -186,6 +201,44 @@ export function RegisterSection() {
                       required
                     />
                   </div>
+
+
+                  {/* Company Size */}
+<div>
+  <label className="block text-[#1A1A1A] font-medium mb-2 text-sm sm:text-base">
+    Company size *
+  </label>
+
+  <select
+    name="companySize"
+    value={formData.companySize}
+    onChange={(e) =>
+      setFormData((prev) => ({
+        ...prev,
+        companySize: e.target.value,
+      }))
+    }
+    className="
+      w-full px-3 sm:px-4 py-2.5 sm:py-3
+      rounded-lg border border-gray-300
+      bg-white
+      focus:border-[#FF7A00]
+      focus:outline-none focus:ring-2 focus:ring-[#FF7A00]/20
+      transition-all text-sm sm:text-base
+    "
+    required
+  >
+    <option value="" disabled>
+      Select company size
+    </option>
+    <option value="1-10">1–10</option>
+    <option value="11-50">11–50</option>
+    <option value="51-200">51–200</option>
+    <option value="201-500">201–500</option>
+    <option value="500+">500+</option>
+  </select>
+</div>
+
 
                   {/* Domain Checkboxes */}
                   <div>
